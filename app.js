@@ -65,10 +65,7 @@ app.post("/",function(req,res){
       request.end()
 
 
-      app.post("/failure.html" , function(req,res)
-      {
-          res.redirect("/")
-      })
+     
 
     
 })
@@ -79,7 +76,7 @@ app.post("/",function(req,res){
     })
 
 
-app.listen( 3000,function(){
+app.listen(process.env.PORT||3000,function(){
     console.log("server starting at the port 3000")
 })
 
