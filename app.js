@@ -55,17 +55,14 @@ app.post("/",function(req,res){
 
             res.sendFile(__dirname +  "/failure.html" )
          }
-             response.on("data" , function(data){
-                  console.log(JSON.parse(data))
-             })
+           
              
       })
 
-    //  request.write(jsondata)
-      request.end()
+    
 
 
-      app.post("/failure.html" , function(req,res)
+      app.post("/failure" , function(req,res)
       {
           res.redirect("/")
       })
