@@ -55,14 +55,17 @@ app.post("/",function(req,res){
 
             res.sendFile(__dirname +  "/failure.html" )
          }
-           
+             response.on("data" , function(data){
+                  console.log(JSON.parse(data))
+             })
              
       })
 
-    
+    //  request.write(jsondata)
+      request.end()
 
 
-      app.post("/failure" , function(req,res)
+      app.post("/failure.html" , function(req,res)
       {
           res.redirect("/")
       })
@@ -70,10 +73,13 @@ app.post("/",function(req,res){
     
 })
 
+    app.post("/failure" , function(req,res){
+
+        res.redirect("/")
+    })
 
 
-
-app.listen(process.env.PORT || 3000,function(){
+app.listen( 3000,function(){
     console.log("server starting at the port 3000")
 })
 
@@ -93,3 +99,6 @@ app.listen(process.env.PORT || 3000,function(){
 
 
 
+
+/*  api key*/
+// unique id
